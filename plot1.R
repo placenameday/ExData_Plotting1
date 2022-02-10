@@ -12,9 +12,9 @@ dt <- unzip("epc.zip") %>%
   dplyr::as_tibble()
 
 # Save the data as txt file, so it can be used in future work.
-write.table(dt, "dt.txt")
+write.csv(dt, "dt.csv", row.names=FALSE)
 
 # Creat png picture and save it.
-png(file = "plot1.png", width = 480,height = 480)
+png(file = "plot1.png", width = 480,height = 480, bg = 'transparent')
 hist(dt$Global_active_power, col = "red", xlab = "Global Active Power (kilowatts)", main = "Global Active Power")
 dev.off()
