@@ -10,3 +10,10 @@ dt <- unzip("epc.zip") %>%
   dplyr::as_tibble()
 
 write.table(dt, "dt.txt")
+
+png(file = "plot1.png")
+png(p.picture,width=480,height=480)
+
+hist(dt$Global_active_power, col = "red", xlab = "Global Active Power (kilowatts)", main = "Global Active Power")
+
+dev.off()
